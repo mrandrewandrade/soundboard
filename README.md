@@ -22,4 +22,4 @@ No internet connection is required. The board includes 35 bundled sounds and als
 
 The complete static site is in `dist/`. It has no build step or third-party runtime dependencies.
 
-Pushes to `main` deploy automatically through the GitHub Pages workflow in `.github/workflows/pages.yml`.
+The published site is served from the repository's `gh-pages` branch.
