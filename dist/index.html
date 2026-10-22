@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f0e8" />
+    <meta name="description" content="A fast, classroom-friendly instant soundboard." />
+    <title>Class Instants</title>
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#sound-grid">Skip to sounds</a>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Class Instants home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span class="brand-copy">
+          <strong>CLASS INSTANTS</strong>
+          <small>sound on cue</small>
+        </span>
+      </a>
+
+      <div class="desk-controls" aria-label="Playback controls">
+        <button class="icon-control" id="mute-button" type="button" aria-label="Mute sounds" title="Mute sounds">
+          <span aria-hidden="true" id="volume-icon">◖))</span>
+        </button>
+        <label class="volume-control">
+          <span class="sr-only">Volume</span>
+          <input id="volume" type="range" min="0" max="100" value="78" />
+        </label>
+        <button class="mode-control" id="mode-button" type="button" aria-pressed="false">
+          <span class="mode-dot" aria-hidden="true"></span>
+          <span id="mode-label">Solo mode</span>
+        </button>
+        <button class="stop-button" id="stop-button" type="button">
+          <span class="stop-square" aria-hidden="true"></span>
+          Stop all
+          <kbd>Esc</kbd>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-kicker"><span></span> READY WHEN YOU ARE</div>
+        <h1 id="page-title">Cue the<br /><em>moment.</em></h1>
+        <p>Big reactions. Tiny buttons. Built for the front of the room.</p>
+
+        <div class="search-row">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <span class="sr-only">Search sounds</span>
+            <input id="search" type="search" placeholder="Find a sound…" autocomplete="off" />
+            <kbd>/</kbd>
+          </label>
+          <button class="surprise-button" id="random-button" type="button">
+            <span aria-hidden="true">↝</span> Surprise me
+          </button>
+          <label class="add-button" for="sound-upload">
+            <span aria-hidden="true">＋</span> Add my sounds
+          </label>
+          <input id="sound-upload" type="file" accept="audio/*" multiple hidden />
+        </div>
+      </section>
+
+      <section class="board" aria-labelledby="sounds-heading">
+        <div class="board-toolbar">
+          <div>
+            <p class="eyebrow">THE BUTTON WALL</p>
+            <h2 id="sounds-heading"><span id="result-count">35</span> sounds, zero awkward silence.</h2>
+          </div>
+          <div class="shortcut-hint"><kbd>1</kbd>–<kbd>9</kbd> play the first row</div>
+        </div>
+
+        <nav class="filters" id="filters" aria-label="Sound categories"></nav>
+        <div class="sound-grid" id="sound-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span aria-hidden="true">…</span>
+          <h3>No sound on that frequency.</h3>
+          <p>Try a shorter search or switch categories.</p>
+          <button type="button" id="reset-search">Reset the board</button>
+        </div>
+      </section>
+    </main>
+
+    <aside class="now-playing" id="now-playing" aria-live="polite" aria-hidden="true">
+      <div class="now-pulse" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div>
+        <small>NOW PLAYING</small>
+        <strong id="now-title">Ready</strong>
+      </div>
+      <button id="dock-stop" type="button" aria-label="Stop current sounds">Stop</button>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <footer>
+      <span>Class Instants</span>
+      <p>Private by default. Your added sounds stay on this device and disappear when you refresh.</p>
+      <button type="button" id="help-button">Keyboard help</button>
+    </footer>
+
+    <dialog id="help-dialog">
+      <form method="dialog">
+        <button class="dialog-close" value="close" aria-label="Close help">×</button>
+        <p class="eyebrow">QUICK HANDS</p>
+        <h2>Run the board without looking.</h2>
+        <dl>
+          <div><dt><kbd>1</kbd>–<kbd>9</kbd></dt><dd>Play the first nine visible sounds</dd></div>
+          <div><dt><kbd>/</kbd></dt><dd>Jump to search</dd></div>
+          <div><dt><kbd>Esc</kbd></dt><dd>Stop every sound immediately</dd></div>
+          <div><dt><kbd>Space</kbd></dt><dd>Stop all when focus is outside a button</dd></div>
+        </dl>
+        <p class="dialog-note">Solo mode keeps things tidy by stopping the previous clip. Switch to Mix mode when chaos is part of the lesson.</p>
+      </form>
+    </dialog>
+  </body>
+</html>
