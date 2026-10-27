@@ -8,7 +8,7 @@ Live site: <https://mrandrewandrade.github.io/soundboard/>
 
 Double-click **Launch Class Instants.cmd**. It starts a small local server and opens the board in your browser. Close the minimized **Class Instants Server** window when you are finished.
 
-No internet connection is required. The board includes 35 bundled sounds and also lets you add temporary audio files for the current browser session.
+No internet connection is required. The board includes 37 bundled sounds and also lets you add temporary audio files for the current browser session.
 
 ## Controls
 
