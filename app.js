@@ -10,6 +10,8 @@ const sounds = [
   { id: "three-two-one", title: "3, 2, 1, Go!", icon: "🏁", category: "Classroom", color: "#61c7ff", file: "three-two-one-go.mp3" },
   { id: "few-moments", title: "A Few Moments Later", icon: "⌛", category: "Classroom", color: "#e7a66f", file: "few-moments-later.mp3" },
   { id: "let-them-cook", title: "Let Them Cook", icon: "🍳", category: "Classroom", color: "#ff9f43", file: "let-them-cook.mp3" },
+  { id: "no-problem-hook", title: "No Problem (Quick)", icon: "😏", category: "Classroom", color: "#69c7a5", file: "no-problem-clean-hook.mp3" },
+  { id: "no-problem-ramp", title: "No Problem (Ramp)", icon: "📈", category: "Classroom", color: "#8a7cf0", file: "no-problem-ramp-clean.mp3" },
   { id: "epic", title: "Epic Moment", icon: "🏆", category: "Drama", color: "#f3cf5b", file: "epic.mp3" },
   { id: "dun-dun-dun", title: "Dun Dun Dun", icon: "🎺", category: "Drama", color: "#ff765f", file: "dun-dun-dun.mp3" },
   { id: "undertaker", title: "The Bell", icon: "🔔", category: "Drama", color: "#9f8aff", file: "undertaker-bell.mp3" },
